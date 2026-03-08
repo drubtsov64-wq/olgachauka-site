@@ -27,8 +27,8 @@ export async function onRequestPost(context) {
     return Response.json({ ok: false, error: 'Имя и телефон обязательны' }, { status: 400 });
   }
 
-  const token  = context.env.TELEGRAM_BOT_TOKEN;
-  const chatId = context.env.TELEGRAM_CHAT_ID;
+  const token  = context.env.tg_bot_token;
+  const chatId = context.env.tg_chat_id;
 
   if (!token || !chatId) {
     console.error('[lead] Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID');

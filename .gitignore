@@ -1,0 +1,14 @@
+# Секреты — никогда не коммитить!
+bot/.env
+.env
+*.env
+
+# Системные
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Временные
+*.tmp
+*.log
+pptx_text.txt

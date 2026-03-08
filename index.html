@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Методы оздоровления Ольги Чайка — гирудотерапия, баночный массаж, су-джок, аурикулотерапия</title>
+  <meta name="description" content="Натуральные методы оздоровления: гирудотерапия, баночный массаж, су-джок, аурикулотерапия. Сертифицированный специалист Ольга Чайка. Индивидуальный подбор метода, первая консультация бесплатно.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://olgachauka.ru/">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://olgachauka.ru/">
+  <meta property="og:title" content="Методы оздоровления Ольги Чайка — натуральный подход к самочувствию">
+  <meta property="og:description" content="Гирудотерапия, баночный массаж, су-джок, аурикулотерапия. Сертифицированный специалист. Индивидуальный подбор метода. Консультация бесплатно.">
+  <meta property="og:image" content="https://olgachauka.ru/assets/img/olga.jpg">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="600">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Методы оздоровления Ольги Чайка — натуральный подход к самочувствию">
+  <meta name="twitter:description" content="Гирудотерапия, баночный массаж, су-джок, аурикулотерапия. Сертифицированный специалист. Консультация бесплатно.">
+  <meta name="twitter:image" content="https://olgachauka.ru/assets/img/olga.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.ico">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#1C140C">
+
+  <!-- Preload above-the-fold images -->
+  <link rel="preload" as="image" href="assets/img/olga.jpg">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+/* ===== QUIZ BLOCK ===== */
+.quiz-section {
+  background: var(--warm);
+  padding: 96px 0;
+  position: relative;
+}
+.quiz-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 50%, rgba(196,152,64,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 85% 50%, rgba(107,78,30,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.quiz-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+.quiz-inner {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 48px rgba(28,20,12,0.09), 0 2px 12px rgba(28,20,12,0.04);
+  padding: 52px 52px 44px;
+}
+.quiz-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+.quiz-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 12px;
+  display: block;
+}
+.quiz-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.quiz-subtitle {
+  font-size: 0.97rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Progress */
+.quiz-progress-wrap {
+  margin-bottom: 40px;
+}
+.quiz-progress-bar-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--goldlt));
+  border-radius: 4px;
+  transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 25%;
+}
+.quiz-progress-text {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.79rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Steps */
+.quiz-step {
+  display: none;
+}
+.quiz-step.active {
+  display: block;
+  animation: quizFadeIn 0.3s ease;
+}
+@keyframes quizFadeIn {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes quizShake {
+  0%   { transform: translateX(0); }
+  18%  { transform: translateX(-7px); }
+  36%  { transform: translateX(7px); }
+  54%  { transform: translateX(-5px); }
+  72%  { transform: translateX(5px); }
+  90%  { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+.quiz-q {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 24px;
+  line-height: 1.35;
+}
+
+/* Selectable Cards */
+.quiz-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.quiz-card {
+  background: var(--warm);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 18px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.quiz-card:hover {
+  border-color: var(--mint);
+  box-shadow: 0 4px 18px rgba(196,152,64,0.1);
+  transform: translateY(-2px);
+  background: #fff;
+}
+.quiz-card.selected {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, rgba(196,152,64,0.07) 0%, rgba(196,152,64,0.02) 100%);
+  box-shadow: 0 4px 22px rgba(196,152,64,0.16);
+  transform: translateY(-1px);
+}
+.quiz-card-check {
+  width: 21px;
+  height: 21px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+.quiz-card.selected .quiz-card-check {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.quiz-card.selected .quiz-card-check::after {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: #fff;
+  border-radius: 50%;
+}
+.quiz-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.quiz-card-title {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.35;
+}
+.quiz-card-desc {
+  font-size: 0.79rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Form (Step 4) */
+.quiz-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 4px;
+}
+.quiz-form-row label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 7px;
+  font-family: var(--font-sans);
+}
+.quiz-req { color: var(--gold); }
+.quiz-opt { color: var(--muted); font-weight: 400; }
+.quiz-form-row input,
+.quiz-form-row textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.93rem;
+  color: var(--text);
+  background: var(--warm);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  -webkit-appearance: none;
+}
+.quiz-form-row input:focus,
+.quiz-form-row textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(196,152,64,0.13);
+}
+.quiz-form-row textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+/* Navigation */
+.quiz-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.quiz-btn-back {
+  padding: 12px 22px;
+  border-radius: 9px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  font-family: var(--font-sans);
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+.quiz-btn-back:hover {
+  border-color: var(--mint);
+  color: var(--dark);
+}
+.quiz-btn-back.quiz-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.quiz-btn-next,
+.quiz-btn-submit {
+  padding: 14px 34px;
+  border-radius: 9px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gold);
+  border: 2px solid var(--gold);
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+  font-family: var(--font-sans);
+  margin-left: auto;
+  letter-spacing: 0.01em;
+}
+.quiz-btn-next:hover,
+.quiz-btn-submit:hover {
+  background: #b0882e;
+  border-color: #b0882e;
+  box-shadow: 0 8px 24px rgba(196,152,64,0.32);
+  transform: translateY(-1px);
+}
+.quiz-btn-submit {
+  display: none;
+}
+.quiz-btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.quiz-form-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.5;
+  display: none;
+}
+.quiz-error-hint {
+  font-size: 0.8rem;
+  color: #c0392b;
+  margin-top: 6px;
+  display: none;
+}
+.quiz-error-hint.visible { display: block; }
+
+/* Success */
+.quiz-success {
+  display: none;
+  text-align: center;
+  padding: 48px 20px 36px;
+  animation: quizFadeIn 0.45s ease;
+}
+.quiz-success-icon {
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(135deg, rgba(196,152,64,0.14), rgba(196,152,64,0.04));
+  border: 2px solid rgba(196,152,64,0.28);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: var(--gold);
+  margin: 0 auto 22px;
+}
+.quiz-success-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.quiz-success-text {
+  font-size: 0.97rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 400px;
+  margin: 0 auto 18px;
+}
+.quiz-success-sub {
+  font-size: 0.83rem;
+  color: var(--muted);
+  opacity: 0.65;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .quiz-inner {
+    padding: 36px 24px 32px;
+    border-radius: var(--radius-sm);
+  }
+}
+@media (max-width: 600px) {
+  .quiz-section { padding: 64px 0; }
+  .quiz-cards { grid-template-columns: 1fr; gap: 10px; }
+  .quiz-btn-next, .quiz-btn-submit { padding: 13px 22px; font-size: 0.91rem; }
+  .quiz-btn-back { padding: 13px 16px; font-size: 0.85rem; }
+  .quiz-nav { gap: 10px; }
+}
+
+/* ===== SPECIALIST SECTION ===== */
+.specialist-section {
+  padding: 96px 0;
+  background: var(--cream);
+}
+.specialist-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.specialist-content h2 {
+  margin: 10px 0 14px;
+}
+.section-label {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  background: rgba(196,152,64,0.12);
+  color: var(--sage);
+  margin-bottom: 4px;
+}
+.specialist-text {
+  margin-bottom: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+.specialist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.specialist-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+.specialist-list li:last-child {
+  margin-bottom: 0;
+}
+.specialist-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ===== INDICATIONS BLOCK (WHEN TO SEEK) ===== */
+.indications-section {
+  padding: 96px 0;
+  background: var(--white);
+}
+.section-head {
+  max-width: 680px;
+  margin: 0 auto 44px;
+}
+.section-head.center {
+  text-align: center;
+}
+.section-head h2 {
+  margin: 10px 0 14px;
+}
+.section-head p {
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 0.97rem;
+  margin-bottom: 0;
+}
+.indications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.indication-card {
+  padding: 22px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--warm);
+  border: 1px solid var(--border);
+  line-height: 1.55;
+  font-size: 0.93rem;
+  color: var(--text);
+  font-weight: 500;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.indication-card::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--goldlt));
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.indication-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  border-color: rgba(196,152,64,0.32);
+}
+@media (max-width: 900px) {
+  .indications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .indications-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== SERVICE BUTTON ===== */
+.service-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 11px 18px;
+  background: var(--gold);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius-xs);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  white-space: nowrap;
+}
+.service-btn:hover {
+  background: var(--gold-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(196,152,64,0.28);
+}
+
+/* ===== CARD BUTTON ALIGNMENT ===== */
+/* Равновысокие карточки — кнопка прибита к низу */
+.method-card {
+  display: flex;
+  flex-direction: column;
+}
+.method-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.method-card-body .service-btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* ===== SCROLL OFFSET FOR FIXED NAV ===== */
+section {
+  scroll-margin-top: 88px;
+}
+
+/* ===== MOBILE PADDING OVERRIDES FOR NEW SECTIONS ===== */
+@media (max-width: 640px) {
+  .specialist-section,
+  .indications-section {
+    padding: 72px 0;
+  }
+  .specialist-photo {
+    max-width: 260px;
+  }
+}
+
+/* ===== STICKY CTA BUTTON ===== */
+.sticky-cta {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 998;
+  padding: 15px 28px;
+  background: var(--gold);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(196,152,64,0.38), 0 2px 8px rgba(0,0,0,0.12);
+  letter-spacing: 0.01em;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s, opacity 0.35s;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.sticky-cta.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sticky-cta:hover {
+  background: #b0882e;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(196,152,64,0.44), 0 2px 8px rgba(0,0,0,0.14);
+}
+@media (max-width: 640px) {
+  .sticky-cta {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    text-align: center;
+    padding: 17px 24px;
+    font-size: 1rem;
+    box-shadow: 0 -4px 24px rgba(196,152,64,0.22);
+  }
+  .sticky-cta:hover {
+    transform: none;
+  }
+}
+
+/* ===== SOCIAL PROOF ===== */
+.social-proof-section {
+  padding: 48px 0;
+  background: var(--cream);
+}
+.social-proof-card {
+  max-width: 540px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(28,20,12,0.07), 0 1px 6px rgba(28,20,12,0.04);
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: center;
+}
+.social-proof-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(196,152,64,0.14), rgba(196,152,64,0.04));
+  border: 1.5px solid rgba(196,152,64,0.28);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.social-proof-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.4;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .social-proof-card {
+    padding: 22px 22px;
+    margin: 0 20px;
+    gap: 14px;
+  }
+}
+
+/* ===== MINI-CASES ===== */
+.cases-section {
+  padding: 96px 0;
+  background: var(--warm);
+}
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 44px;
+}
+.case-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 6px 28px rgba(28,20,12,0.07), 0 1px 6px rgba(28,20,12,0.03);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(28,20,12,0.11), 0 2px 10px rgba(28,20,12,0.05);
+}
+.case-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.case-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.case-item:first-child {
+  padding-top: 0;
+}
+.case-item-label {
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  display: block;
+  margin-bottom: 5px;
+}
+.case-item-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
+  font-weight: 500;
+}
+.case-item--result .case-item-value {
+  color: var(--dark);
+  font-weight: 600;
+}
+.case-item--result .case-item-label {
+  color: var(--gold);
+}
+@media (max-width: 900px) {
+  .cases-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 640px) {
+  .cases-section { padding: 64px 0; }
+  .cases-grid { margin-top: 32px; }
+  .case-card { padding: 22px 20px; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <span class="nav-logo-title">Кабинет оздоровления</span>
+      <span class="nav-logo-sub">Ольга Чайка</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#methods">Методы</a></li>
+      <li><a href="#indications">Запросы</a></li>
+      <li><a href="#how">Как проходит</a></li>
+      <li><a href="#about">О специалисте</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="#quiz">Подбор</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:+79887403597" class="nav-phone">+7 988 740-35-97</a>
+      <a href="https://t.me/chayka_girudo_bot?start=site" target="_blank" rel="noopener noreferrer" class="btn-nav btn-nav-tg">Telegram</a>
+      <a href="#contact" class="btn-nav">Записаться</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mob-menu" id="mobMenu" role="dialog" aria-label="Навигация">
+  <a href="#methods" class="mob-link">Методы</a>
+  <a href="#indications" class="mob-link">С чем обращаются</a>
+  <a href="#how" class="mob-link">Как проходит</a>
+  <a href="#about" class="mob-link">О специалисте</a>
+  <a href="#prices" class="mob-link">Цены</a>
+  <a href="#quiz" class="mob-link">Подбор программы</a>
+  <a href="#contact" class="mob-link">Контакты</a>
+  <a href="tel:+79887403597" class="mob-phone">+7 988 740-35-97</a>
+  <a href="#contact" class="btn-mob">Записаться на приём</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Левая колонка: текст -->
+      <div class="hero-left">
+        <p class="hero-badge reveal">Кабинет оздоровления &middot; Сертифицированный специалист</p>
+        <h1 class="reveal">Натуральные методы<br><em>оздоровления</em><br>и восстановления</h1>
+        <p class="hero-sub reveal">Индивидуальный подход, мягкие методы воздействия и внимательное сопровождение для улучшения самочувствия и качества жизни.</p>
+
+        <div class="hero-perks reveal">
+          <div class="hero-perk">
+            <span class="hero-perk-ico" aria-hidden="true">&#128100;</span>
+            <span>Индивидуальный подход</span>
+          </div>
+          <div class="hero-perk">
+            <span class="hero-perk-ico" aria-hidden="true">&#10024;</span>
+            <span>Комплексные методы</span>
+          </div>
+          <div class="hero-perk">
+            <span class="hero-perk-ico" aria-hidden="true">&#9774;</span>
+            <span>Спокойная атмосфера</span>
+          </div>
+        </div>
+
+        <div class="hero-cta reveal">
+          <a href="#quiz" class="btn btn-primary btn-lg">Записаться на консультацию</a>
+          <a href="https://t.me/chayka_girudo_bot?start=site" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">Подобрать метод в Telegram</a>
+        </div>
+      </div>
+
+      <!-- Правая колонка: фото -->
+      <div class="hero-right reveal">
+        <div class="hero-photo-frame">
+          <img
+            src="assets/img/olga.jpg"
+            alt="Ольга Чайка — специалист по натуральным методам оздоровления"
+            class="hero-photo"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
+        <div class="hero-deco">
+          <div class="hero-deco-icon">&#10003;</div>
+          <div>
+            <strong>Первичная консультация</strong>
+            <span>Бесплатно</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ДОВЕРИЕ ===== -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-grid">
+
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">&#127891;</div>
+        <div class="trust-body">
+          <strong>Сертифицированный специалист</strong>
+          <span>Гирудотерапия, рефлексотерапия, натуропатия</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">&#127807;</div>
+        <div class="trust-body">
+          <strong>Натуральные методы</strong>
+          <span>Без химической нагрузки на организм</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">&#128101;</div>
+        <div class="trust-body">
+          <strong>Индивидуальный подход</strong>
+          <span>Метод подбирается под ваш запрос</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">&#9989;</div>
+        <div class="trust-body">
+          <strong>Безопасность и чистота</strong>
+          <span>Стерильные материалы однократного применения</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">&#128172;</div>
+        <div class="trust-body">
+          <strong>Сопровождение клиента</strong>
+          <span>На связи до и после каждой процедуры</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== СПЕЦИАЛИСТ ===== -->
+<section class="specialist-section" id="specialist">
+  <div class="container">
+    <div class="specialist-content">
+      <span class="section-label">Специалист</span>
+      <h2>Ольга Чайка</h2>
+      <p class="specialist-text">
+        Мягкий, внимательный и индивидуальный подход к каждому пациенту. Подбор метода оздоровления с учётом состояния, запроса и особенностей организма.
+      </p>
+      <ul class="specialist-list">
+        <li>Практика более 10 лет</li>
+        <li>Сертифицированный специалист</li>
+        <li>Индивидуальный подход к каждому пациенту</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== МЕТОДЫ ===== -->
+<section class="methods" id="methods">
+  <div class="container">
+    <p class="sec-label reveal">Что предлагаем</p>
+    <h2 class="sec-title reveal">Методы работы</h2>
+    <p class="sec-sub reveal">Подбираем один метод или комбинацию — в зависимости от вашего запроса и состояния.</p>
+    <div class="methods-grid reveal">
+
+      <div class="method-card">
+        <img
+          src="assets/img/giru.png"
+          alt="Гирудотерапия — сеансы с медицинскими пиявками"
+          class="method-card-img"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="method-card-body">
+          <h3>Гирудотерапия</h3>
+          <p>Сеансы с медицинскими пиявками. Один из старейших методов натуропатии — применяют для поддержки кровообращения и обменных процессов.</p>
+          <ul>
+            <li>Поддержка при варикозе и застоях</li>
+            <li>Поддержка кровообращения и лимфотока</li>
+          </ul>
+          <a href="#contact" class="service-btn">Записаться на процедуру</a>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <img
+          src="assets/img/banochniy.png"
+          alt="Баночный массаж — вакуумная терапия"
+          class="method-card-img"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="method-card-body">
+          <h3>Баночный массаж</h3>
+          <p>Вакуумное воздействие на ткани и мышцы. Применяют для поддержки лимфодренажа, расслабления мышечных зажимов и улучшения микроциркуляции.</p>
+          <ul>
+            <li>Напряжение в спине, шее, плечах</li>
+            <li>Отёчность и застойные явления</li>
+          </ul>
+          <a href="#contact" class="service-btn">Записаться на процедуру</a>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <img
+          src="assets/img/sujok.jpg"
+          alt="Су-джок терапия — воздействие на рефлекторные зоны"
+          class="method-card-img"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="method-card-body">
+          <h3>Су-джок терапия</h3>
+          <p>Воздействие на рефлекторные зоны кистей и стоп. Мягкий метод — часто применяют как дополнительную поддержку при различных запросах.</p>
+          <ul>
+            <li>Общая поддержка тонуса и самочувствия</li>
+            <li>Работа с напряжением и дискомфортом</li>
+          </ul>
+          <a href="#contact" class="service-btn">Записаться на процедуру</a>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <img
+          src="images/auriculotherapy.jpg"
+          alt="Аурикулотерапия — воздействие на активные точки уха"
+          class="method-card-img"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="method-card-body">
+          <h3>Аурикулотерапия</h3>
+          <p>Мягкое воздействие на активные точки ушной раковины для поддержки естественных процессов восстановления организма.</p>
+          <ul>
+            <li>Гармонизация нервной системы</li>
+            <li>Работа со стрессом и напряжением</li>
+          </ul>
+          <a href="#contact" class="service-btn">Записаться на процедуру</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== КОГДА ПОМОГАЕТ ===== -->
+<section class="indications-section" id="when-helps">
+  <div class="container">
+    <div class="section-head center">
+      <span class="section-label">Когда помогает</span>
+      <h2>Когда стоит обратиться</h2>
+      <p>
+        Методы оздоровления подбираются индивидуально и могут быть особенно полезны при следующих состояниях:
+      </p>
+    </div>
+    <div class="indications-grid">
+      <div class="indication-card">Хроническая усталость</div>
+      <div class="indication-card">Стресс и нервное напряжение</div>
+      <div class="indication-card">Нарушение сна</div>
+      <div class="indication-card">Боли в спине и мышечные зажимы</div>
+      <div class="indication-card">Снижение энергии и общего тонуса</div>
+      <div class="indication-card">Восстановление после перегрузок</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== КОМУ ПОДХОДИТ ===== -->
+<section class="indications" id="indications">
+  <div class="container">
+    <p class="sec-label reveal">Запросы</p>
+    <h2 class="sec-title reveal">С чем обращаются</h2>
+    <p class="sec-sub reveal">Натуральные методы часто применяют как дополнительную поддержку самочувствия. Конкретный метод подбирается на консультации.</p>
+    <div class="cards-grid reveal">
+
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">&#129504;</div>
+        <h3>Напряжение и стресс</h3>
+        <p>Сложно расслабиться, нарушен сон, ощущение постоянной перегруженности. Применяют для поддержки нервной системы и общего состояния.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">&#127774;</div>
+        <h3>Усталость и нехватка сил</h3>
+        <p>Упадок сил, сниженный тонус, апатия, снижение работоспособности. Применяют для поддержки общей жизненной активности.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">&#129460;</div>
+        <h3>Спина, шея, мышцы</h3>
+        <p>Напряжение и дискомфорт в спине, шее, плечах, мышечные зажимы. Применяют для расслабления и поддержки подвижности.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">&#128167;</div>
+        <h3>Отёчность и застой</h3>
+        <p>Ощущение тяжести, отёки, нарушение микроциркуляции. Применяют для поддержки лимфодренажа и кровообращения.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">&#9889;</div>
+        <h3>Головные боли, напряжение</h3>
+        <p>Регулярные головные боли, давящие ощущения, напряжение в голове и шее. Применяют как дополнительный метод общей поддержки.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">&#127807;</div>
+        <h3>Поддержка восстановления</h3>
+        <p>После физических нагрузок, длительного стресса или болезни. Применяют для поддержки восстановительных процессов организма.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== МИНИ-КЕЙСЫ ===== -->
+<section class="cases-section" id="cases">
+  <div class="container">
+    <div class="section-head center">
+      <span class="section-label">Результаты</span>
+      <h2>Истории клиентов</h2>
+      <p>Примеры того, с чем обращались и что удалось улучшить.</p>
+    </div>
+    <div class="cases-grid">
+
+      <div class="case-card">
+        <div class="case-item">
+          <span class="case-item-label">Проблема</span>
+          <span class="case-item-value">Постоянная усталость и напряжение</span>
+        </div>
+        <div class="case-item">
+          <span class="case-item-label">Метод</span>
+          <span class="case-item-value">Аурикулотерапия</span>
+        </div>
+        <div class="case-item case-item--result">
+          <span class="case-item-label">Результат</span>
+          <span class="case-item-value">Снижение напряжения и улучшение самочувствия.</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-item">
+          <span class="case-item-label">Проблема</span>
+          <span class="case-item-value">Боли в спине и мышечные зажимы в шее</span>
+        </div>
+        <div class="case-item">
+          <span class="case-item-label">Метод</span>
+          <span class="case-item-value">Баночный массаж</span>
+        </div>
+        <div class="case-item case-item--result">
+          <span class="case-item-label">Результат</span>
+          <span class="case-item-value">Расслабление мышц и восстановление подвижности.</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-item">
+          <span class="case-item-label">Проблема</span>
+          <span class="case-item-value">Нарушение сна и хронический стресс</span>
+        </div>
+        <div class="case-item">
+          <span class="case-item-label">Метод</span>
+          <span class="case-item-value">Гирудотерапия в сочетании с су-джок</span>
+        </div>
+        <div class="case-item case-item--result">
+          <span class="case-item-label">Результат</span>
+          <span class="case-item-value">Улучшение качества сна и снижение тревожности.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== КАК ПРОХОДИТ ПРОЦЕДУРА ===== -->
+<section class="how" id="how">
+  <div class="container">
+    <p class="sec-label reveal">Процесс</p>
+    <h2 class="sec-title reveal">Как проходит работа</h2>
+    <p class="sec-sub reveal">Подбираем методы под ваш запрос и проводим процедуру под наблюдением специалиста. Никакой спешки.</p>
+    <div class="steps reveal">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Консультация и уточнение запроса</h3>
+        <p>Короткая беседа: обсуждаем ваш запрос, самочувствие, образ жизни. Выявляем противопоказания и возможные ограничения.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Подбор метода</h3>
+        <p>Исходя из запроса и состояния, специалист предлагает один метод или сочетание нескольких — с объяснением, почему именно так.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Процедура / курс</h3>
+        <p>Проводим сеанс. Если нужен курс &mdash; согласовываем частоту и количество встреч. Вы под наблюдением на протяжении всей процедуры.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Рекомендации и сопровождение</h3>
+        <p>После процедуры даём рекомендации по уходу и образу жизни. Остаёмся на связи, если появятся вопросы.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПРЕИМУЩЕСТВА МЕТОДА ===== -->
+<section class="benefits" id="benefits">
+  <div class="container benefits-grid">
+    <div>
+      <p class="sec-label reveal" style="color: var(--mint)">Наш подход</p>
+      <h2 class="sec-title reveal" style="color: #fff">Почему натуральные методы</h2>
+      <p class="benefits-sub reveal">Натуропатические практики известны тысячелетиями и по-прежнему актуальны благодаря мягкому, комплексному действию без химической нагрузки.</p>
+    </div>
+    <ul class="benefits-list reveal">
+      <li>
+        <span class="benefits-check" aria-hidden="true">&#10003;</span>
+        <div>
+          <strong>Полностью натуральный метод</strong>
+          <span>Без таблеток, инъекций и химических препаратов.</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefits-check" aria-hidden="true">&#10003;</span>
+        <div>
+          <strong>Комплексный подход, а не только маскировка симптомов</strong>
+          <span>Может способствовать улучшению кровообращения и снятию напряжения в тканях.</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefits-check" aria-hidden="true">&#10003;</span>
+        <div>
+          <strong>Курсовое применение для поддержания результата</strong>
+          <span>Положительное влияние на самочувствие, как правило, заметнее при прохождении курса сеансов.</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefits-check" aria-hidden="true">&#10003;</span>
+        <div>
+          <strong>Поддержка кровообращения и лимфотока</strong>
+          <span>Биоактивные вещества слюны пиявки могут способствовать улучшению микроциркуляции и снятию застоев.</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefits-check" aria-hidden="true">&#10003;</span>
+        <div>
+          <strong>Вариант при непереносимости медикаментов</strong>
+          <span>Не создаёт нагрузки на ЖКТ и печень в отличие от многих препаратов.</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefits-check" aria-hidden="true">&#10003;</span>
+        <div>
+          <strong>Безопасная процедура у специалиста</strong>
+          <span>Сертифицированный специалист, стерильные медицинские пиявки однократного применения.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== О СПЕЦИАЛИСТЕ ===== -->
+<section class="about" id="about">
+  <div class="container about-grid">
+
+    <div class="about-content">
+      <p class="sec-label reveal">О специалисте</p>
+      <h2 class="sec-title reveal">Ольга Чайка</h2>
+      <p class="about-role reveal">Специалист по натуральным методам оздоровления</p>
+      <p class="about-desc reveal">Работаю по принципу индивидуального подхода: подбираю метод или сочетание методов исходя из вашего запроса и состояния. Каждый человек уникален &mdash; программа составляется именно под вас.</p>
+
+      <ul class="about-facts reveal">
+        <li>
+          <span aria-hidden="true">&#127891;</span>
+          Сертифицированный специалист: гирудотерапия, рефлексотерапия, натуропатия
+        </li>
+        <li>
+          <span aria-hidden="true">&#128204;</span>
+          4 метода в одном кабинете: гирудотерапия, баночный массаж, су-джок, аурикулотерапия
+        </li>
+        <li>
+          <span aria-hidden="true">&#128203;</span>
+          Индивидуальный подбор метода под запрос &mdash; не по шаблону
+        </li>
+        <li>
+          <span aria-hidden="true">&#127968;</span>
+          Приём на дому и в кабинете &mdash; удобный для вас формат
+        </li>
+        <li>
+          <span aria-hidden="true">&#9989;</span>
+          Только сертифицированные материалы и методики
+        </li>
+      </ul>
+
+      <div class="safety-block reveal">
+        <h3>
+          <span aria-hidden="true">&#9888;</span>
+          Безопасность и противопоказания
+        </h3>
+        <p>Все методы имеют показания и противопоказания &mdash; перед первым сеансом обязательно проводится консультация. При хронических заболеваниях рекомендуется предварительное согласование с лечащим врачом. Специалист не ставит диагнозов и не заменяет медицинскую помощь. Полный список противопоказаний для каждого метода обсуждается индивидуально.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ЦЕНЫ ===== -->
+<section class="prices" id="prices">
+  <div class="container">
+    <p class="sec-label reveal">Стоимость</p>
+    <h2 class="sec-title reveal">Цены</h2>
+    <p class="sec-sub reveal">Точная стоимость зависит от количества пиявок и задач курса. Итоговая цена формируется на первичной консультации.</p>
+
+    <div class="prices-table reveal">
+      <div class="price-row price-row--highlight">
+        <div class="price-info">
+          <strong>Первичная консультация</strong>
+          <span>Обсуждение жалоб, подбор программы, выявление противопоказаний</span>
+        </div>
+        <div class="price-val">Бесплатно</div>
+      </div>
+      <div class="price-row">
+        <div class="price-info">
+          <strong>Сеанс гирудотерапии</strong>
+          <span>Постановка пиявок, наблюдение, уход после процедуры</span>
+        </div>
+        <div class="price-val">Уточняйте по телефону</div>
+      </div>
+      <div class="price-row">
+        <div class="price-info">
+          <strong>Индивидуальный курс</strong>
+          <span>Разработка персональной программы, рекомендованное число сеансов</span>
+        </div>
+        <div class="price-val">Подбирается персонально</div>
+      </div>
+    </div>
+
+    <div class="prices-cta reveal">
+      <a href="#contact" class="btn btn-primary">Узнать стоимость курса</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUIZ ===== -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-container">
+    <div class="quiz-inner">
+
+      <div class="quiz-header">
+        <span class="quiz-label">Подбор программы</span>
+        <h2 class="quiz-title">Подберите подходящий формат оздоровления</h2>
+        <p class="quiz-subtitle">Ответьте на несколько вопросов, чтобы мы могли предложить наиболее подходящий вариант</p>
+      </div>
+
+      <div class="quiz-progress-wrap" id="quizProgressWrap">
+        <div class="quiz-progress-bar-track">
+          <div class="quiz-progress-fill" id="quizProgressFill"></div>
+        </div>
+        <div class="quiz-progress-text">
+          <span id="quizStepLabel">Шаг 1 из 4</span>
+        </div>
+      </div>
+
+      <!-- Шаг 1 -->
+      <div class="quiz-step active" id="quizStep1">
+        <h3 class="quiz-q">Какое направление вам сейчас ближе?</h3>
+        <div class="quiz-cards">
+          <div class="quiz-card" data-step="1" data-value="Гирудотерапия">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Гирудотерапия</span>
+              <span class="quiz-card-desc">Сеансы с медицинскими пиявками</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="1" data-value="Баночный массаж">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Баночный массаж</span>
+              <span class="quiz-card-desc">Вакуумное воздействие и лимфодренаж</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="1" data-value="Су-джок / аурикулотерапия">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Су-джок / аурикулотерапия</span>
+              <span class="quiz-card-desc">Рефлекторные методы воздействия</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="1" data-value="Нужна консультация и подбор">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Нужна консультация и подбор</span>
+              <span class="quiz-card-desc">Помогу определиться на встрече</span>
+            </div>
+          </div>
+        </div>
+        <p class="quiz-error-hint" id="quizErr1">Пожалуйста, выберите один из вариантов</p>
+      </div>
+
+      <!-- Шаг 2 -->
+      <div class="quiz-step" id="quizStep2">
+        <h3 class="quiz-q">С чем вы хотите поработать в первую очередь?</h3>
+        <div class="quiz-cards">
+          <div class="quiz-card" data-step="2" data-value="Напряжение и дискомфорт в теле">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Напряжение и дискомфорт в теле</span>
+              <span class="quiz-card-desc">Спина, шея, мышечные зажимы</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="2" data-value="Усталость и снижение энергии">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Усталость и снижение энергии</span>
+              <span class="quiz-card-desc">Упадок сил, сниженный тонус</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="2" data-value="Стресс, сон, эмоциональное напряжение">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Стресс, сон, эмоциональное напряжение</span>
+              <span class="quiz-card-desc">Тревожность, нарушения сна, перегруженность</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="2" data-value="Общее оздоровление и восстановление">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Общее оздоровление и восстановление</span>
+              <span class="quiz-card-desc">Профилактика, поддержание самочувствия</span>
+            </div>
+          </div>
+        </div>
+        <p class="quiz-error-hint" id="quizErr2">Пожалуйста, выберите один из вариантов</p>
+      </div>
+
+      <!-- Шаг 3 -->
+      <div class="quiz-step" id="quizStep3">
+        <h3 class="quiz-q">Когда вам удобно начать?</h3>
+        <div class="quiz-cards">
+          <div class="quiz-card" data-step="3" data-value="Как можно скорее">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Как можно скорее</span>
+              <span class="quiz-card-desc">Готов записаться в ближайшее время</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="3" data-value="На этой неделе">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">На этой неделе</span>
+              <span class="quiz-card-desc">В течение ближайших нескольких дней</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="3" data-value="В ближайшее время">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">В ближайшее время</span>
+              <span class="quiz-card-desc">Примерно в течение месяца</span>
+            </div>
+          </div>
+          <div class="quiz-card" data-step="3" data-value="Пока просто хочу узнать подробнее">
+            <div class="quiz-card-check"></div>
+            <div class="quiz-card-text">
+              <span class="quiz-card-title">Пока просто хочу узнать подробнее</span>
+              <span class="quiz-card-desc">Изучаю варианты, без записи</span>
+            </div>
+          </div>
+        </div>
+        <p class="quiz-error-hint" id="quizErr3">Пожалуйста, выберите один из вариантов</p>
+      </div>
+
+      <!-- Шаг 4 — форма -->
+      <div class="quiz-step" id="quizStep4">
+        <h3 class="quiz-q">Оставьте ваши контактные данные</h3>
+        <div class="quiz-form-grid">
+          <div class="quiz-form-row">
+            <label for="quizName">Ваше имя <span class="quiz-req" aria-hidden="true">*</span></label>
+            <input type="text" id="quizName" name="quizName" placeholder="Как вас зовут?" autocomplete="name">
+          </div>
+          <div class="quiz-form-row">
+            <label for="quizPhone">Телефон <span class="quiz-req" aria-hidden="true">*</span></label>
+            <input type="tel" id="quizPhone" name="quizPhone" placeholder="+7 ___ ___-__-__" autocomplete="tel">
+          </div>
+          <div class="quiz-form-row">
+            <label for="quizComment">Комментарий <span class="quiz-opt">(необязательно)</span></label>
+            <textarea id="quizComment" name="quizComment" placeholder="Расскажите немного о вашем запросе"></textarea>
+          </div>
+        </div>
+        <p class="quiz-error-hint" id="quizErr4">Пожалуйста, заполните имя и телефон</p>
+      </div>
+
+      <!-- Успех -->
+      <div class="quiz-success" id="quizSuccess">
+        <div class="quiz-success-icon">&#10003;</div>
+        <h3 class="quiz-success-title">Заявка отправлена</h3>
+        <p class="quiz-success-text">Спасибо! Ольга свяжется с вами в течение нескольких часов, чтобы обсудить подходящий вариант и удобное время.</p>
+        <p class="quiz-success-sub">Вы также можете написать напрямую в WhatsApp или Telegram</p>
+      </div>
+
+      <!-- Навигация -->
+      <div class="quiz-nav" id="quizNav">
+        <button class="quiz-btn-back quiz-hidden" id="quizBack" type="button">&#8592; Назад</button>
+        <button class="quiz-btn-next" id="quizNext" type="button">Далее &#8594;</button>
+        <button class="quiz-btn-submit" id="quizSubmit" type="button">Отправить заявку &#8594;</button>
+      </div>
+
+      <p class="quiz-form-note" id="quizFormNote">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== СОЦИАЛЬНОЕ ДОКАЗАТЕЛЬСТВО ===== -->
+<section class="social-proof-section">
+  <div class="container">
+    <div class="social-proof-card">
+      <div class="social-proof-icon">&#10003;</div>
+      <p class="social-proof-text">Более 120 человек уже получили консультацию.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== КОНТАКТЫ ===== -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <p class="sec-label reveal">Запись</p>
+      <h2 class="sec-title reveal">Запишитесь на приём</h2>
+      <p class="sec-sub reveal">Первая консультация&nbsp;&mdash; бесплатно. Расскажите о своей ситуации, подберём подходящий метод.</p>
+
+      <div class="contact-items reveal">
+        <a href="tel:+79887403597" class="contact-item">
+          <span class="contact-ico" aria-hidden="true">&#128222;</span>
+          <div>
+            <span class="contact-label">Телефон</span>
+            <span class="contact-val">+7 988 740-35-97</span>
+          </div>
+        </a>
+        <div class="contact-item">
+          <span class="contact-ico" aria-hidden="true">&#128205;</span>
+          <div>
+            <span class="contact-label">Место приёма</span>
+            <span class="contact-val">PLACEHOLDER_АДРЕС · Приём на дому / коворкинг</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-ico" aria-hidden="true">&#128336;</span>
+          <div>
+            <span class="contact-label">Запись</span>
+            <span class="contact-val">Ежедневно, по предварительной записи</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="msg-btns reveal">
+        <a href="https://wa.me/79887403597" target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://t.me/chayka_girudo" target="_blank" rel="noopener noreferrer" class="btn btn-tg btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram
+        </a>
+      </div>
+    </div>
+
+    <div class="form-wrap reveal">
+      <h3>Оставьте заявку</h3>
+      <p class="form-sub">Свяжитесь с нами — мы подберём удобное время и ответим на все вопросы.</p>
+
+      <form
+        name="contact"
+        method="POST"
+        id="contactForm"
+      >
+
+        <!-- Honeypot для защиты от ботов -->
+        <div class="hp-field" aria-hidden="true">
+          <label>Не заполняйте это поле
+            <input name="bot-field" tabindex="-1" autocomplete="off">
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label for="fname">Ваше имя <span aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="fname"
+            name="name"
+            placeholder="Как вас зовут?"
+            required
+            autocomplete="name"
+          >
+        </div>
+
+        <div class="form-row">
+          <label for="fphone">Телефон <span aria-hidden="true">*</span></label>
+          <input
+            type="tel"
+            id="fphone"
+            name="phone"
+            placeholder="+7 ___ ___-__-__"
+            required
+            autocomplete="tel"
+          >
+        </div>
+
+        <div class="form-row">
+          <label for="fmsg">Комментарий</label>
+          <textarea
+            id="fmsg"
+            name="message"
+            placeholder="Что беспокоит? Какой результат хотите получить?"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-submit">Отправить заявку &rarr;</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">Гирудотерапия Ольги Чайка</div>
+      <div class="footer-copy">&copy; 2025–2026 &middot; Специализация: Гирудотерапия, Рефлексотерапия, Натуропатия, Восточные методы</div>
+      <div class="footer-legal">Сайт носит информационный характер и не является медицинской рекламой услуг. Имеются противопоказания.</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#indications">Показания</a></li>
+      <li><a href="#how">Как проходит</a></li>
+      <li><a href="#about">О специалисте</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="tel:+79887403597">+7 988 740-35-97</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ===== STICKY CTA ===== -->
+<a href="https://t.me/chayka_girudo_bot?start=site" target="_blank" rel="noopener noreferrer" class="sticky-cta" id="stickyCta">
+  Подобрать метод в Telegram
+</a>
+
+<script>
+/* ===== QUIZ LOGIC ===== */
+(function () {
+  var TOTAL = 4;
+  var step = 1;
+  var answers = { 1: '', 2: '', 3: '' };
+
+  var elFill     = document.getElementById('quizProgressFill');
+  var elLabel    = document.getElementById('quizStepLabel');
+  var elBack     = document.getElementById('quizBack');
+  var elNext     = document.getElementById('quizNext');
+  var elSubmit   = document.getElementById('quizSubmit');
+  var elNav      = document.getElementById('quizNav');
+  var elNote     = document.getElementById('quizFormNote');
+  var elSuccess  = document.getElementById('quizSuccess');
+  var elPWrap    = document.getElementById('quizProgressWrap');
+
+  function updateProgress() {
+    elFill.style.width = (step / TOTAL * 100) + '%';
+    elLabel.textContent = 'Шаг ' + step + ' из ' + TOTAL;
+  }
+
+  function showStep(n) {
+    for (var i = 1; i <= TOTAL; i++) {
+      var el = document.getElementById('quizStep' + i);
+      if (el) el.classList.remove('active');
+      var err = document.getElementById('quizErr' + i);
+      if (err) err.classList.remove('visible');
+    }
+    var target = document.getElementById('quizStep' + n);
+    if (target) target.classList.add('active');
+
+    elBack.classList.toggle('quiz-hidden', n === 1);
+    elNext.style.display    = (n < TOTAL) ? '' : 'none';
+    elSubmit.style.display  = (n === TOTAL) ? '' : 'none';
+    elNote.style.display    = (n === TOTAL) ? 'block' : 'none';
+
+    updateProgress();
+  }
+
+  /* Карточки */
+  document.querySelectorAll('.quiz-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var s = this.dataset.step;
+      document.querySelectorAll('.quiz-card[data-step="' + s + '"]').forEach(function (c) {
+        c.classList.remove('selected');
+      });
+      this.classList.add('selected');
+      answers[parseInt(s)] = this.dataset.value;
+
+      /* скрываем ошибку при выборе */
+      var err = document.getElementById('quizErr' + s);
+      if (err) err.classList.remove('visible');
+    });
+  });
+
+  /* Кнопка «Далее» */
+  elNext.addEventListener('click', function () {
+    if (step < TOTAL) {
+      if (!answers[step]) {
+        showError(step);
+        return;
+      }
+      step++;
+      showStep(step);
+      scrollToQuiz();
+    }
+  });
+
+  /* Кнопка «Назад» */
+  elBack.addEventListener('click', function () {
+    if (step > 1) {
+      step--;
+      showStep(step);
+      scrollToQuiz();
+    }
+  });
+
+  /* Кнопка «Отправить» */
+  elSubmit.addEventListener('click', function () {
+    var name    = document.getElementById('quizName').value.trim();
+    var phone   = document.getElementById('quizPhone').value.trim();
+    var comment = document.getElementById('quizComment').value.trim();
+
+    if (!name || !phone) {
+      var err = document.getElementById('quizErr4');
+      if (err) err.classList.add('visible');
+      shakeEl(elSubmit);
+      if (!name) document.getElementById('quizName').focus();
+      else document.getElementById('quizPhone').focus();
+      return;
+    }
+
+    elSubmit.disabled = true;
+    elSubmit.textContent = 'Отправляю\u2026';
+
+    var quizMsg =
+      '\uD83D\uDCCB Квиз\n' +
+      '\uD83D\uDCCC Направление: ' + (answers[1] || '\u2014') + '\n' +
+      '\uD83C\uDFAF Запрос: '      + (answers[2] || '\u2014') + '\n' +
+      '\uD83D\uDDD3 Когда удобно: '+ (answers[3] || '\u2014') +
+      (comment ? '\n\uD83D\uDCAC Комментарий: ' + comment : '');
+
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, phone: phone, message: quizMsg })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (data.ok) {
+        showSuccess();
+      } else {
+        resetSubmit();
+        alert('Не удалось отправить заявку. Пожалуйста, позвоните нам: +7 988 740-35-97');
+      }
+    })
+    .catch(function () {
+      resetSubmit();
+      alert('Ошибка сети. Пожалуйста, позвоните нам: +7 988 740-35-97');
+    });
+  });
+
+  function showSuccess() {
+    for (var i = 1; i <= TOTAL; i++) {
+      var el = document.getElementById('quizStep' + i);
+      if (el) el.classList.remove('active');
+    }
+    elSuccess.style.display  = 'block';
+    elNav.style.display      = 'none';
+    elPWrap.style.display    = 'none';
+    elNote.style.display     = 'none';
+    scrollToQuiz();
+  }
+
+  function resetSubmit() {
+    elSubmit.disabled = false;
+    elSubmit.textContent = 'Отправить заявку \u2192';
+  }
+
+  function showError(s) {
+    var err = document.getElementById('quizErr' + s);
+    if (err) err.classList.add('visible');
+    shakeEl(elNext);
+  }
+
+  function shakeEl(el) {
+    el.style.animation = 'none';
+    void el.offsetWidth;
+    el.style.animation = 'quizShake 0.38s ease';
+    el.addEventListener('animationend', function handler() {
+      el.style.animation = '';
+      el.removeEventListener('animationend', handler);
+    });
+  }
+
+  function scrollToQuiz() {
+    var quiz = document.getElementById('quiz');
+    if (!quiz) return;
+    var top = quiz.getBoundingClientRect().top + window.pageYOffset - 88;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+
+  /* Инициализация */
+  showStep(1);
+})();
+</script>
+
+<script src="script.js" defer></script>
+
+<script>
+/* ===== STICKY CTA VISIBILITY ===== */
+(function () {
+  var btn = document.getElementById('stickyCta');
+  if (!btn) return;
+  function check() {
+    btn.classList.toggle('visible', window.scrollY > 300);
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  check();
+})();
+</script>
+</body>
+</html>

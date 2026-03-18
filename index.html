@@ -40,6 +40,37 @@
 
   <link rel="stylesheet" href="styles.css">
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Ольга Чайка — методы оздоровления",
+    "url": "https://olgachauka.ru/",
+    "telephone": "+79887403597",
+    "image": "https://olgachauka.ru/assets/img/olga.jpg",
+    "description": "Натуральные методы оздоровления: гирудотерапия, баночный массаж, су-джок, аурикулотерапия. Сертифицированный специалист Ольга Чайка.",
+    "priceRange": "₽₽",
+    "areaServed": "RU",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Услуги",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Гирудотерапия" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Баночный массаж" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Су-джок терапия" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Аурикулотерапия" } }
+      ]
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+79887403597",
+      "contactType": "customer service",
+      "availableLanguage": "Russian"
+    }
+  }
+  </script>
+
   <style>
 /* ===== QUIZ BLOCK ===== */
 .quiz-section {
@@ -616,6 +647,9 @@ section {
   .sticky-cta:hover {
     transform: none;
   }
+  body {
+    padding-bottom: 72px; /* prevent sticky CTA bar from covering content */
+  }
 }
 
 /* ===== SOCIAL PROOF ===== */
@@ -970,7 +1004,7 @@ section {
 
       <div class="method-card">
         <img
-          src="images/auriculotherapy.jpg"
+          src="assets/img/auriculotherapy.jpg"
           alt="Аурикулотерапия — воздействие на активные точки уха"
           class="method-card-img"
           loading="lazy"
@@ -1452,7 +1486,7 @@ section {
       <div class="quiz-nav" id="quizNav">
         <button class="quiz-btn-back quiz-hidden" id="quizBack" type="button">&#8592; Назад</button>
         <button class="quiz-btn-next" id="quizNext" type="button">Далее &#8594;</button>
-        <button class="quiz-btn-submit" id="quizSubmit" type="button">Отправить заявку &#8594;</button>
+        <button class="quiz-btn-submit" id="quizSubmit" type="button">Написать в Telegram &#8594;</button>
       </div>
 
       <p class="quiz-form-note" id="quizFormNote">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
@@ -1492,7 +1526,7 @@ section {
           <span class="contact-ico" aria-hidden="true">&#128205;</span>
           <div>
             <span class="contact-label">Место приёма</span>
-            <span class="contact-val">PLACEHOLDER_АДРЕС · Приём на дому / коворкинг</span>
+            <span class="contact-val">Приём на дому / коворкинг</span>
           </div>
         </div>
         <div class="contact-item">
@@ -1635,7 +1669,7 @@ section {
 
     elBack.classList.toggle('quiz-hidden', n === 1);
     elNext.style.display    = (n < TOTAL) ? '' : 'none';
-    elSubmit.style.display  = (n === TOTAL) ? '' : 'none';
+    elSubmit.style.display  = (n === TOTAL) ? 'block' : 'none';
     elNote.style.display    = (n === TOTAL) ? 'block' : 'none';
 
     updateProgress();
@@ -1695,7 +1729,6 @@ section {
     }
 
     elSubmit.disabled = true;
-    elSubmit.textContent = 'Отправляю\u2026';
 
     var quizMsg =
       '\uD83D\uDCCB Квиз\n' +
@@ -1704,24 +1737,17 @@ section {
       '\uD83D\uDDD3 Когда удобно: '+ (answers[3] || '\u2014') +
       (comment ? '\n\uD83D\uDCAC Комментарий: ' + comment : '');
 
+    /* Отправляем данные в фоне (без ожидания) */
     fetch('/api/lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name, phone: phone, message: quizMsg })
-    })
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      if (data.ok) {
-        showSuccess();
-      } else {
-        resetSubmit();
-        alert('Не удалось отправить заявку. Пожалуйста, позвоните нам: +7 988 740-35-97');
-      }
-    })
-    .catch(function () {
-      resetSubmit();
-      alert('Ошибка сети. Пожалуйста, позвоните нам: +7 988 740-35-97');
-    });
+    }).catch(function () {});
+
+    /* Открываем Telegram-бота */
+    window.open('https://t.me/chayka_girudo_bot?start=site', '_blank', 'noopener,noreferrer');
+
+    showSuccess();
   });
 
   function showSuccess() {
@@ -1734,11 +1760,6 @@ section {
     elPWrap.style.display    = 'none';
     elNote.style.display     = 'none';
     scrollToQuiz();
-  }
-
-  function resetSubmit() {
-    elSubmit.disabled = false;
-    elSubmit.textContent = 'Отправить заявку \u2192';
   }
 
   function showError(s) {

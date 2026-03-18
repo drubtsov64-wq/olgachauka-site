@@ -3,6 +3,10 @@ bot/.env
 .env
 *.env
 
+# Зависимости
+node_modules/
+package-lock.json
+
 # Системные
 .DS_Store
 Thumbs.db

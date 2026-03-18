@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Забрать проект",
+      "type": "shell",
+      "command": "git pull",
+      "options": {
+        "shell": {
+          "executable": "powershell",
+          "args": ["-NoProfile", "-Command"]
+        }
+      }
+    },
+    {
+      "label": "Сохранить и отправить проект",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "git add -A; $m = Read-Host -Prompt 'Введите комментарий'; git commit -m \"$m\"; git push"
+      ]
+    }
+  ]
+}

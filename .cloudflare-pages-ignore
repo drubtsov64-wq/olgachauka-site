@@ -1,0 +1,10 @@
+# Файлы, которые НЕ должны деплоиться на Cloudflare Pages
+bot/
+node_modules/
+package.json
+package-lock.json
+.env*
+*.env
+.gitignore
+.git/
+deploy_out.txt

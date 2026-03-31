@@ -16,3 +16,6 @@ desktop.ini
 *.tmp
 *.log
 pptx_text.txt
+
+# Autosync log
+.automation/autosync.log

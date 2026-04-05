@@ -61,6 +61,10 @@ class Survey(StatesGroup):
     q_contact  = State()   # способ связи          → сохраняется в: contact (q2)
     contact_ph = State()   # номер телефона
     question   = State()   # вопрос специалисту
+    lead_name  = State()   # имя клиента
+    lead_phone = State()   # телефон клиента
+    lead_issue = State()   # что беспокоит
+    lead_time  = State()   # удобное время связи
 
 
 # ---------------------------------------------------------------------------
@@ -368,6 +372,21 @@ def build_question_notification(user, question: str) -> str:
     )
 
 
+def build_lead_notification(data: dict, user) -> str:
+    now = datetime.now().strftime("%d.%m.%Y %H:%M")
+    username = f"@{user.username}" if user.username else "нет username"
+    return (
+        "Новая заявка из бота\n\n"
+        f"Тип: {data.get('lead_intent', 'Заявка')}\n"
+        f"Имя: {data.get('lead_name', '—')}\n"
+        f"Телефон: {data.get('lead_phone', '—')}\n"
+        f"Что беспокоит: {data.get('lead_issue', '—')}\n"
+        f"Удобное время связи: {data.get('lead_time', '—')}\n"
+        f"Telegram: {username}\n"
+        f"Дата: {now}"
+    )
+
+
 # ---------------------------------------------------------------------------
 # Клавиатуры
 # ---------------------------------------------------------------------------
@@ -417,10 +436,9 @@ def kb_booked() -> InlineKeyboardMarkup:
 
 def kb_menu() -> InlineKeyboardMarkup:
     return kb([
-        [("Пройти опрос",                     "survey_start")],
-        [("Узнать о методах",                 "methods_menu")],
-        [("Получить бесплатную консультацию", "book_direct")],
-        [("Задать вопрос",                    "ask_question")],
+        [("Подобрать метод", "lead_method")],
+        [("Записаться",      "lead_book")],
+        [("Задать вопрос",   "ask_question")],
     ])
 
 
@@ -462,8 +480,7 @@ async def cmd_start(message: Message, state: FSMContext):
             "Меня зовут Ольга Чайка — специалист по натуральным "
             "методам оздоровления.\n\n"
             "Помогла более 120 людям с похожими запросами. "
-            "Первая консультация — бесплатно.\n\n"
-            "Расскажите немного о себе — подберём подходящий вариант."
+            "Первая консультация — бесплатно."
         )
     else:
         text = (
@@ -471,11 +488,10 @@ async def cmd_start(message: Message, state: FSMContext):
             "Меня зовут Ольга Чайка — специалист по натуральным "
             "методам оздоровления.\n\n"
             "Помогу подобрать подходящий метод. "
-            "Первая консультация — бесплатно.\n\n"
-            "Это займёт меньше минуты."
+            "Первая консультация — бесплатно."
         )
 
-    await message.answer(text, reply_markup=kb_start())
+    await message.answer(text, reply_markup=kb_menu())
 
 
 @router.message(Command("menu"))
@@ -496,19 +512,95 @@ async def cb_menu(cb: CallbackQuery, state: FSMContext):
     await cb.answer()
 
 
+async def start_lead_flow(cb: CallbackQuery, state: FSMContext, intent: str):
+    await state.clear()
+    await state.update_data(lead_intent=intent)
+    await state.set_state(Survey.lead_name)
+    await cb.message.edit_reply_markup(reply_markup=None)
+    await cb.message.answer("Как вас зовут?")
+    await cb.answer()
+
+
+@router.callback_query(F.data == "lead_method")
+async def cb_lead_method(cb: CallbackQuery, state: FSMContext):
+    await start_lead_flow(cb, state, "Подобрать метод")
+
+
+@router.callback_query(F.data == "lead_book")
+async def cb_lead_book(cb: CallbackQuery, state: FSMContext):
+    await start_lead_flow(cb, state, "Записаться")
+
+
+@router.message(Survey.lead_name)
+async def msg_lead_name(message: Message, state: FSMContext):
+    name = (message.text or "").strip()
+    if not name:
+        await message.answer("Напишите, пожалуйста, как вас зовут.")
+        return
+    await state.update_data(lead_name=name)
+    await state.set_state(Survey.lead_phone)
+    await message.answer("Ваш телефон?")
+
+
+@router.message(Survey.lead_phone, F.contact)
+async def msg_lead_phone_contact(message: Message, state: FSMContext):
+    phone = message.contact.phone_number
+    await state.update_data(lead_phone=phone)
+    await state.set_state(Survey.lead_issue)
+    await message.answer("Что вас беспокоит?", reply_markup=ReplyKeyboardRemove())
+
+
+@router.message(Survey.lead_phone)
+async def msg_lead_phone(message: Message, state: FSMContext):
+    phone = (message.text or "").strip()
+    if not phone:
+        await message.answer("Напишите, пожалуйста, ваш телефон.")
+        return
+    await state.update_data(lead_phone=phone)
+    await state.set_state(Survey.lead_issue)
+    await message.answer("Что вас беспокоит?")
+
+
+@router.message(Survey.lead_issue)
+async def msg_lead_issue(message: Message, state: FSMContext):
+    issue = (message.text or "").strip()
+    if not issue:
+        await message.answer("Напишите, пожалуйста, что вас беспокоит.")
+        return
+    await state.update_data(lead_issue=issue)
+    await state.set_state(Survey.lead_time)
+    await message.answer("Какое время для связи удобно?")
+
+
+@router.message(Survey.lead_time)
+async def msg_lead_time(message: Message, state: FSMContext, bot: Bot):
+    lead_time = (message.text or "").strip()
+    if not lead_time:
+        await message.answer("Напишите, пожалуйста, удобное время для связи.")
+        return
+
+    await state.update_data(lead_time=lead_time)
+    data = await state.get_data()
+    await state.clear()
+
+    if SPECIALIST_CHAT_ID:
+        notification = build_lead_notification(data, message.from_user)
+        await bot.send_message(SPECIALIST_CHAT_ID, notification)
+
+    await message.answer(
+        "Спасибо! Заявка принята.\n\n"
+        "Ольга свяжется с вами в ближайшее время.",
+        reply_markup=kb_booked(),
+    )
+
+
 # ---------------------------------------------------------------------------
 # Опрос: Q1 — Проблема (problem)
 # ---------------------------------------------------------------------------
 
 @router.callback_query(F.data == "survey_start")
 async def cb_survey_start(cb: CallbackQuery, state: FSMContext):
-    await state.set_state(Survey.q_problem)
-    await cb.message.edit_reply_markup(reply_markup=None)
-    await cb.message.answer(
-        "Что сейчас беспокоит больше всего?",
-        reply_markup=kb_problem(),
-    )
-    await cb.answer()
+    await start_lead_flow(cb, state, "Подобрать метод")
 
 
 @router.callback_query(Survey.q_problem, F.data.startswith("prob_"))
@@ -671,14 +763,8 @@ async def cb_book(cb: CallbackQuery, state: FSMContext, bot: Bot):
 
 @router.callback_query(F.data == "book_direct")
 async def cb_book_direct(cb: CallbackQuery, state: FSMContext):
-    """Прямая запись из меню — спрашиваем только способ связи."""
-    await state.set_state(Survey.q_contact)
-    await cb.message.edit_reply_markup(reply_markup=None)
-    await cb.message.answer(
-        "Как Ольге удобнее с вами связаться?",
-        reply_markup=kb_contact(),
-    )
-    await cb.answer()
+    """Старый callback оставлен для обратной совместимости."""
+    await start_lead_flow(cb, state, "Записаться")
 
 
 # ---------------------------------------------------------------------------

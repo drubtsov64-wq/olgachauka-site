@@ -5,12 +5,24 @@ const path    = require('path');
 require('dotenv').config();
 
 const app = express();
+
+// Лог всех входящих запросов
+app.use(function (req, _res, next) {
+  console.log(req.method, req.url);
+  next();
+});
+
 app.use(express.json());
 
-// Статические файлы (HTML, CSS, JS, изображения)
+// Явная отдача index.html — ПЕРВЫМ, до express.static
+app.get('/', function (_req, res) {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Статические файлы (CSS, JS, картинки и т.д.)
 app.use(express.static(path.join(__dirname), {
-  // Не отдавать служебные файлы напрямую
-  index: 'index.html',
+  index: false,
+  dotfiles: 'deny',
 }));
 
 // POST /api/lead — приём заявки с сайта

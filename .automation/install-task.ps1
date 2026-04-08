@@ -1,16 +1,15 @@
 $ErrorActionPreference = 'Stop'
 
 $taskName = 'AutoSync_olgachauka-site'
-$scriptPath = Join-Path $PSScriptRoot 'autosync.ps1'
-$powershellPath = (Get-Command powershell.exe).Source
+$vbsPath = Join-Path $PSScriptRoot 'autosync-hidden.vbs'
 
-if (-not (Test-Path $scriptPath)) {
-    throw "Script not found: $scriptPath"
+if (-not (Test-Path $vbsPath)) {
+    throw "Script not found: $vbsPath"
 }
 
 $action = New-ScheduledTaskAction `
-    -Execute $powershellPath `
-    -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`""
+    -Execute 'wscript.exe' `
+    -Argument "`"$vbsPath`""
 
 $trigger = New-ScheduledTaskTrigger `
     -Once `

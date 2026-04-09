@@ -591,10 +591,18 @@ async def msg_lead_time(message: Message, state: FSMContext, bot: Bot):
         notification = build_lead_notification(data, message.from_user)
         await bot.send_message(SPECIALIST_CHAT_ID, notification)
 
-    await message.answer(
-        "Спасибо! Я свяжусь с вами в течение нескольких часов.",
-        reply_markup=kb_booked(),
-    )
+    for attempt in range(2):
+        try:
+            await message.answer(
+                "Спасибо! Я свяжусь с вами в течение нескольких часов.",
+                reply_markup=kb_booked(),
+            )
+            break
+        except Exception as e:
+            if attempt == 0:
+                await asyncio.sleep(2)
+            else:
+                log.error("Не удалось отправить финальное сообщение пользователю: %s", e)
 
 
 # ---------------------------------------------------------------------------

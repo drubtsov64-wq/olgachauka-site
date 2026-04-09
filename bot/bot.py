@@ -475,23 +475,27 @@ async def cmd_start(message: Message, state: FSMContext):
     source = message.text.split()[-1] if len(message.text.split()) > 1 else ""
 
     if source == "site":
-        text = (
+        # Пришёл с сайта — сразу запускаем сценарий «Подобрать метод»
+        await message.answer(
             "Здравствуйте.\n\n"
             "Меня зовут Ольга Чайка — специалист по натуральным "
             "методам оздоровления.\n\n"
             "Помогла более 120 людям с похожими запросами. "
             "Первая консультация — бесплатно."
         )
+        await state.update_data(lead_intent="Подобрать метод")
+        await state.set_state(Survey.lead_name)
+        await message.answer("Как вас зовут?")
     else:
-        text = (
+        # Прямой вход — показываем общее меню
+        await message.answer(
             "Здравствуйте.\n\n"
             "Меня зовут Ольга Чайка — специалист по натуральным "
             "методам оздоровления.\n\n"
             "Помогу подобрать подходящий метод. "
-            "Первая консультация — бесплатно."
+            "Первая консультация — бесплатно.",
+            reply_markup=kb_menu(),
         )
-
-    await message.answer(text, reply_markup=kb_menu())
 
 
 @router.message(Command("menu"))

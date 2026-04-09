@@ -592,8 +592,7 @@ async def msg_lead_time(message: Message, state: FSMContext, bot: Bot):
         await bot.send_message(SPECIALIST_CHAT_ID, notification)
 
     await message.answer(
-        "Спасибо! Заявка принята.\n\n"
-        "Ольга свяжется с вами в ближайшее время.",
+        "Спасибо! Я свяжусь с вами в течение нескольких часов.",
         reply_markup=kb_booked(),
     )
 

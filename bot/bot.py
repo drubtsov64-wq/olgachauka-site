@@ -589,7 +589,10 @@ async def msg_lead_time(message: Message, state: FSMContext, bot: Bot):
 
     if SPECIALIST_CHAT_ID:
         notification = build_lead_notification(data, message.from_user)
-        await bot.send_message(SPECIALIST_CHAT_ID, notification)
+        try:
+            await bot.send_message(SPECIALIST_CHAT_ID, notification)
+        except Exception as e:
+            log.error("Не удалось отправить уведомление специалисту: %s", e)
 
     for attempt in range(2):
         try:

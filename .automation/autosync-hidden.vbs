@@ -1,2 +1,5 @@
 Set WshShell = CreateObject("WScript.Shell")
-WshShell.Run "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ""C:\Users\??\Projects\olgachauka-site\.automation\autosync.ps1""", 0, False
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+scriptDir = objFSO.GetParentFolderName(WScript.ScriptFullName)
+ps1Path = scriptDir & "\autosync.ps1"
+WshShell.Run "powershell.exe -NoProfile -ExecutionPolicy Bypass -File """ & ps1Path & """", 0, False

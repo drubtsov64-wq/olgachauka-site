@@ -1,0 +1,6 @@
+﻿Не удалось обработать -File ".\.automation\autosync.ps1работает автосинк", так как файл имеет расширение, отличное от PS1. Укажите действительное имя файла сценария Windows PowerShell и повторите попытку.
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Попробуйте новую кроссплатформенную оболочку PowerShell (https://aka.ms/pscore6)
+

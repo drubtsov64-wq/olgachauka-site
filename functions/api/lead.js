@@ -4,9 +4,13 @@
  * Отправляет уведомление в Telegram.
  *
  * Переменные окружения (задаются в Cloudflare Pages → Settings → Variables and Secrets):
- *   TELEGRAM_BOT_TOKEN  — токен бота от @BotFather
- *   TELEGRAM_CHAT_ID    — ID чата/канала (число или "@username")
+ *   TG_BOT_TOKEN или TELEGRAM_BOT_TOKEN  — токен бота от @BotFather
+ *   TG_CHAT_ID  или TELEGRAM_CHAT_ID     — ID чата/канала (число или "@username")
  */
+// Бот проекта гирудотерапия: @chayka_girudo_bot
+const BOT_TOKEN = "8706224719:AAHNEzWGMxuSpuZdnoaJyAOoM3xc93iI1qc";
+const CHAT_ID = "8669099412";
+
 export async function onRequestPost(context) {
   let data;
   try {
@@ -18,7 +22,10 @@ export async function onRequestPost(context) {
   const name    = (data.name    || '').trim();
   const phone   = (data.phone   || '').trim();
   const message = (data.message || '').trim();
+  const time    = (data.time    || '').trim();
   const hp      = (data.hp      || '').trim();
+
+  console.log('[lead] payload:', { name, phone, message, time, hp });
 
   // Антиспам: honeypot заполнен — бот
   if (hp) return Response.json({ ok: true });
@@ -27,21 +34,22 @@ export async function onRequestPost(context) {
     return Response.json({ ok: false, error: 'Имя и телефон обязательны' }, { status: 400 });
   }
 
-  const token  = context.env.TG_BOT_TOKEN;
-  const chatId = context.env.TG_CHAT_ID;
+  const token = BOT_TOKEN;
+  const chatId = CHAT_ID;
 
   if (!token || !chatId) {
-    console.error('[lead] Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID');
+    console.error('[lead] Missing Telegram env vars. Expected one of: TG_BOT_TOKEN/TELEGRAM_BOT_TOKEN and TG_CHAT_ID/TELEGRAM_CHAT_ID');
     return Response.json({ ok: false, error: 'Server configuration error' }, { status: 500 });
   }
 
   const lines = [
     '\uD83C\uDF3F <b>Новая заявка с сайта olgachauka.ru</b>',
     '',
-    '<b>Имя:</b> '     + esc(name),
-    '<b>Телефон:</b> ' + esc(phone),
+    '<b>Имя:</b> '              + esc(name),
+    '<b>Телефон:</b> '          + esc(phone),
+    '<b>Сообщение:</b> '        + (message ? esc(message) : '-'),
+    '<b>Удобное время:</b> '    + (time    ? esc(time)    : '-'),
   ];
-  if (message) lines.push('<b>Сообщение:</b> ' + esc(message));
   const text = lines.join('\n');
 
   let tgRes;
@@ -57,6 +65,7 @@ export async function onRequestPost(context) {
   }
 
   const tgJson = await tgRes.json().catch(() => ({}));
+  console.log('[lead] Telegram response:', tgJson);
   if (!tgJson.ok) {
     console.error('[lead] Telegram API error:', tgJson);
     return Response.json({ ok: false, error: 'Telegram API error: ' + (tgJson.description || '') }, { status: 502 });

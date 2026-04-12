@@ -770,6 +770,73 @@ section {
   .cases-grid { margin-top: 32px; }
   .case-card { padding: 22px 20px; }
 }
+
+/* ===== REVIEWS SECTION ===== */
+.reviews-section {
+  background: var(--warm);
+  padding: 80px 0;
+}
+.reviews-section .section-title { margin-bottom: 8px; }
+.reviews-sub {
+  color: var(--muted);
+  font-size: 0.97rem;
+  margin-bottom: 40px;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 28px;
+}
+.review-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.review-card-stars {
+  color: var(--gold);
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.review-card-text {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.65;
+  flex: 1;
+}
+.review-card-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.reviews-more {
+  display: none;
+}
+.reviews-more.open {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 28px;
+}
+.reviews-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+@media (max-width: 860px) {
+  .reviews-grid,
+  .reviews-more.open {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -792,7 +859,6 @@ section {
     </ul>
     <div class="nav-cta">
       <a href="tel:+79887403597" class="nav-phone">+7 988 740-35-97</a>
-      <a href="https://t.me/chayka_girudo_bot?start=site" target="_blank" rel="noopener noreferrer" class="btn-nav btn-nav-tg">Telegram</a>
       <a href="#contact" class="btn-nav">Записаться</a>
     </div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
@@ -841,8 +907,7 @@ section {
         </div>
 
         <div class="hero-cta reveal">
-          <a href="#quiz" class="btn btn-primary btn-lg">Записаться на консультацию</a>
-          <a href="https://t.me/chayka_girudo_bot?start=site" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">Подобрать метод в Telegram</a>
+          <a href="#contact" class="btn btn-primary btn-lg">Записаться на консультацию</a>
         </div>
       </div>
 
@@ -1486,7 +1551,7 @@ section {
       <div class="quiz-nav" id="quizNav">
         <button class="quiz-btn-back quiz-hidden" id="quizBack" type="button">&#8592; Назад</button>
         <button class="quiz-btn-next" id="quizNext" type="button">Далее &#8594;</button>
-        <button class="quiz-btn-submit" id="quizSubmit" type="button">Написать в Telegram &#8594;</button>
+        <button class="quiz-btn-submit" id="quizSubmit" type="button">Отправить заявку &#8594;</button>
       </div>
 
       <p class="quiz-form-note" id="quizFormNote">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
@@ -1539,14 +1604,6 @@ section {
       </div>
 
       <div class="msg-btns reveal">
-        <a href="https://wa.me/79887403597" target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp
-        </a>
-        <a href="https://t.me/chayka_girudo" target="_blank" rel="noopener noreferrer" class="btn btn-tg btn-lg">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-          Telegram
-        </a>
       </div>
     </div>
 
@@ -1557,7 +1614,9 @@ section {
       <form
         name="contact"
         method="POST"
+        action="#"
         id="contactForm"
+        novalidate
       >
 
         <!-- Honeypot для защиты от ботов -->
@@ -1592,18 +1651,95 @@ section {
         </div>
 
         <div class="form-row">
-          <label for="fmsg">Комментарий</label>
+          <label for="fmsg">Что беспокоит?</label>
           <textarea
             id="fmsg"
             name="message"
-            placeholder="Что беспокоит? Какой результат хотите получить?"
-            rows="4"
+            placeholder="Опишите ситуацию или запрос"
+            rows="3"
           ></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="ftime">Удобное время для звонка</label>
+          <input
+            type="text"
+            id="ftime"
+            name="time"
+            placeholder="Например: будни после 18:00"
+            autocomplete="off"
+          >
         </div>
 
         <button type="submit" class="btn btn-submit">Отправить заявку &rarr;</button>
         <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
       </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <h2 class="section-title reveal">Отзывы клиентов</h2>
+    <p class="reviews-sub reveal">Реальные отзывы людей, которые уже воспользовались услугой</p>
+
+    <!-- Первые 3 отзыва — всегда видимы -->
+    <div class="reviews-grid reveal">
+
+      <div class="review-card">
+        <div class="review-card-stars">★★★★★</div>
+        <p class="review-card-text">Обратилась с хроническими болями в спине. После курса гирудотерапии стало значительно лучше — боли ушли почти полностью. Ольга очень внимательный специалист, всё объясняет и отвечает на вопросы.</p>
+        <div class="review-card-author">Марина, 43 года</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-stars">★★★★★</div>
+        <p class="review-card-text">Пришла на баночный массаж — до этого никогда не пробовала. Было немного страшно, но Ольга всё объяснила и сделала процедуру очень аккуратно. После нескольких сеансов спина перестала ныть.</p>
+        <div class="review-card-author">Екатерина, 37 лет</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-stars">★★★★☆</div>
+        <p class="review-card-text">Делала аурикулотерапию по поводу бессонницы. Эффект почувствовала уже после второго сеанса — стало легче засыпать. Специалист приятный, обстановка спокойная. Буду продолжать.</p>
+        <div class="review-card-author">Наталья, 51 год</div>
+      </div>
+
+    </div>
+
+    <!-- Ещё 3 отзыва — скрыты по умолчанию -->
+    <div class="reviews-more" id="reviewsMore">
+
+      <div class="review-card">
+        <div class="review-card-stars">★★★★★</div>
+        <p class="review-card-text">Обращалась с варикозом и отёками ног. Гирудотерапия помогла — ноги стали легче, отёки уменьшились. Ольга внимательно следит за самочувствием во время процедуры. Рекомендую.</p>
+        <div class="review-card-author">Светлана, 58 лет</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-stars">★★★★★</div>
+        <p class="review-card-text">Пробовала су-джок терапию от головных болей. Честно, не ожидала такого результата — боли стали реже. Ольга подходит индивидуально к каждому. Спасибо за профессионализм.</p>
+        <div class="review-card-author">Ирина, 44 года</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-stars">★★★★☆</div>
+        <p class="review-card-text">Пришла на консультацию по поводу хронической усталости. Ольга предложила комплексный подход, объяснила каждый метод. После нескольких процедур стало больше энергии и сон улучшился.</p>
+        <div class="review-card-author">Анна, 39 лет</div>
+      </div>
+
+    </div>
+
+    <!-- Кнопки -->
+    <div class="reviews-actions reveal">
+      <button class="btn btn-outline" id="reviewsToggle" type="button">Показать ещё отзывы</button>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfK9pEa0RFz5EcADXY34qUsIqFTHHfiw3vVqhp75B1t2yGNMg/viewform?usp=dialog"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >Оставить отзыв</a>
     </div>
 
   </div>
@@ -1630,10 +1766,6 @@ section {
 <!-- ===== TOAST ===== -->
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- ===== STICKY CTA ===== -->
-<a href="https://t.me/chayka_girudo_bot?start=site" target="_blank" rel="noopener noreferrer" class="sticky-cta" id="stickyCta">
-  Подобрать метод в Telegram
-</a>
 
 <script>
 /* ===== QUIZ LOGIC ===== */
@@ -1713,41 +1845,66 @@ section {
     }
   });
 
-  /* Кнопка «Отправить» */
+  /* Кнопка «Отправить заявку» — отправляет квиз в Worker → Telegram */
   elSubmit.addEventListener('click', function () {
-    var name    = document.getElementById('quizName').value.trim();
-    var phone   = document.getElementById('quizPhone').value.trim();
-    var comment = document.getElementById('quizComment').value.trim();
+    var nameVal    = ((document.getElementById('quizName')    || {}).value || '').trim();
+    var phoneVal   = ((document.getElementById('quizPhone')   || {}).value || '').trim();
+    var commentVal = ((document.getElementById('quizComment') || {}).value || '').trim();
 
-    if (!name || !phone) {
-      var err = document.getElementById('quizErr4');
-      if (err) err.classList.add('visible');
+    var err4 = document.getElementById('quizErr4');
+
+    if (!nameVal || !phoneVal) {
+      if (err4) err4.classList.add('visible');
       shakeEl(elSubmit);
-      if (!name) document.getElementById('quizName').focus();
-      else document.getElementById('quizPhone').focus();
       return;
     }
+    if (err4) err4.classList.remove('visible');
+
+    var msgParts = [];
+    if (answers[1]) msgParts.push('Направление: ' + answers[1]);
+    if (answers[2]) msgParts.push('Запрос: ' + answers[2]);
+    if (answers[3]) msgParts.push('Когда удобно начать: ' + answers[3]);
+    msgParts.push('Комментарий: ' + (commentVal || '-'));
+
+    var payload = {
+      name:    nameVal,
+      phone:   phoneVal,
+      message: msgParts.join('\n'),
+      time:    '',
+      hp:      '',
+    };
 
     elSubmit.disabled = true;
+    elSubmit.textContent = 'Отправляем…';
 
-    var quizMsg =
-      '\uD83D\uDCCB Квиз\n' +
-      '\uD83D\uDCCC Направление: ' + (answers[1] || '\u2014') + '\n' +
-      '\uD83C\uDFAF Запрос: '      + (answers[2] || '\u2014') + '\n' +
-      '\uD83D\uDDD3 Когда удобно: '+ (answers[3] || '\u2014') +
-      (comment ? '\n\uD83D\uDCAC Комментарий: ' + comment : '');
-
-    /* Отправляем данные в фоне (без ожидания) */
-    fetch('/api/lead', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, phone: phone, message: quizMsg })
-    }).catch(function () {});
-
-    /* Открываем Telegram-бота */
-    window.open('https://t.me/chayka_girudo_bot?start=site', '_blank', 'noopener,noreferrer');
-
-    showSuccess();
+    fetch(LEAD_API_URL, {
+      method:  'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body:    JSON.stringify(payload),
+    })
+    .then(function (res) {
+      if (!res.ok) {
+        return res.text().then(function (t) {
+          throw new Error('HTTP ' + res.status + ': ' + t);
+        });
+      }
+      return res.json();
+    })
+    .then(function (data) {
+      if (data.ok) {
+        showSuccess();
+      } else {
+        throw new Error(data.error || 'server error');
+      }
+    })
+    .catch(function (err) {
+      console.error('[quiz] ошибка отправки:', err.message || err);
+      elSubmit.disabled = false;
+      elSubmit.textContent = 'Отправить заявку →';
+      if (typeof showToast === 'function') {
+        showToast('Не удалось отправить заявку. Пожалуйста, позвоните: +7 988 740-35-97');
+      }
+    });
   });
 
   function showSuccess() {
